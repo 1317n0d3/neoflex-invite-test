@@ -1,26 +1,36 @@
 import React from 'react';
-import logo from './logo.svg';
+import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom';
+import styled from 'styled-components';
 import './App.css';
+import CartPage from './components/CartPage';
+import StorePage from './components/StorePage';
+
+
+const router = createBrowserRouter([
+  {
+    path: "/*",
+    element: <Navigate to={'/'} />,
+  },
+  {
+    path: "/",
+    element: <StorePage />,
+  },
+  {
+    path: "/cart",
+    element: <CartPage />,
+  },
+]);
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Wrapper>
+      <RouterProvider router={router} />
+    </Wrapper>
   );
 }
+
+const Wrapper = styled.div`
+  width: 1110px;
+`;
 
 export default App;
