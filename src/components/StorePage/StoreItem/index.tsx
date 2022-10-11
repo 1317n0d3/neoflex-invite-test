@@ -4,8 +4,13 @@ import { colors } from '../../../constants/colors';
 import { IStoreItem } from '../../../models/IStoreItem';
 import starIcon from '../../../assets/star.svg';
 import Image from '../../Image';
+import { useAppDispatch } from '../../../hooks/redux';
+import { cartSlice } from '../../../store/reducers/CartSlice';
 
 const StoreItem: FC<IStoreItem> = ({id, img, title, price, rate, oldPrice, ...props }) => {
+  const dispatch = useAppDispatch();
+  const { addToCart } = cartSlice.actions;
+
   return (
     <Wrapper>
 
@@ -26,7 +31,7 @@ const StoreItem: FC<IStoreItem> = ({id, img, title, price, rate, oldPrice, ...pr
             <Image src={starIcon} alt='rating' />
             {rate}
           </Rate>
-          <Button>Купить</Button>
+          <Button onClick={() => dispatch(addToCart({item: {id, img, title, price, rate, oldPrice}}))}>Купить</Button>
         </RowFlexed>
       </ColumnFlexed>
     </Wrapper>

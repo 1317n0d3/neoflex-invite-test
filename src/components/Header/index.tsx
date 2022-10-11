@@ -4,6 +4,7 @@ import favoriteIcon from './../../assets/favorite.svg';
 import cartIcon from './../../assets/cart.svg';
 import { useNavigate } from 'react-router-dom';
 import { colors } from '../../constants/colors';
+import { useAppSelector } from '../../hooks/redux';
 
 interface IHeader {
   favorites?: number,
@@ -12,6 +13,7 @@ interface IHeader {
 
 const Header: FC<IHeader> = ({ favorites = 0, cart = 0, ...props }) => {
   const navigate = useNavigate();
+  const count = useAppSelector(state => state.cartReducer.count);
 
 
   return (
@@ -29,7 +31,7 @@ const Header: FC<IHeader> = ({ favorites = 0, cart = 0, ...props }) => {
           </Button>
 
           <Button onClick={() => navigate('/cart')}>
-            <ButtonCounter>2</ButtonCounter>
+            <ButtonCounter>{ count }</ButtonCounter>
             <img src={cartIcon} alt="Cart" />
           </Button>
         </Buttons>
@@ -77,14 +79,14 @@ const Logo = styled.a`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 17px;
-    height: 17px;
+    width: 20px;
+    height: 20px;
     border-radius: 100px;
     position: absolute;
     top: 12px;
     right: 12px;
     font-weight: 500;
-    font-size: 15px;
+    font-size: 12px;
     text-align: center;
     background-color: ${colors.orange};
     color: ${colors.white};

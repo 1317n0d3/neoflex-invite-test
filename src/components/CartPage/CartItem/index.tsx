@@ -3,31 +3,30 @@ import styled from 'styled-components';
 import { colors } from '../../../constants/colors';
 import trashIcon from '../../../assets/recycle-bin.svg';
 import Image from '../../Image';
+import { ICartItem } from '../../../models/ICartItem';
 
-interface ICartItem {
-}
-
-const CartItem: FC<ICartItem> = ({ ...props }) => {
+const CartItem: FC<ICartItem> = ({ cartCount, id, img, price, 
+    rate, title, oldPrice, ...props }) => {
 
   return (
     <Wrapper>
       <Column>
-        <ItemImage src={require(`./../../../assets/BOROFONE.png`)} alt='remove' />
+        <ItemImage src={require(`./../../../assets/${img}`)} alt={title} />
         <Row>
           <Counter>
             <Button>-</Button>
-            <Count>1</Count>
+            <Count>{ cartCount }</Count>
             <Button>+</Button>
           </Counter>
         </Row>
       </Column>
       <Column>
-        <Title>Title</Title>
-        <Price>2312 ₽</Price>
+        <Title>{ title }</Title>
+        <Price>{ price } ₽</Price>
       </Column>
       <ColumnEnd>
         <Icon src={trashIcon} alt='remove' />
-        <TotalPrice>2312 ₽</TotalPrice>
+        <TotalPrice>{ price * cartCount } ₽</TotalPrice>
       </ColumnEnd>
     </Wrapper>
   );

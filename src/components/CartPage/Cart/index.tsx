@@ -1,30 +1,43 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
 import { colors } from '../../../constants/colors';
+import { useAppSelector } from '../../../hooks/redux';
 import CartItem from '../CartItem';
 
 interface ICart {
 }
 
 const Cart: FC<ICart> = ({ ...props }) => {
+  const products = useAppSelector(state => state.cartReducer.products);
+  const productsElems = products.map(product => <CartItem
+    cartCount={product.cartCount}
+    id={product.id}
+    img={product.img}
+    price={product.price}
+    rate={product.rate}
+    title={product.title}
+    key={`cart-item-${product.id}`}
+    oldPrice={product.oldPrice}
+  />)
+
+  const totalPrice = products.reduce((prev, curr) => {
+    return prev + curr.cartCount * curr.price
+  }, 0)
+
 
   return (
     <Wrapper>
       <Category>Корзина</Category>
       <FlexDiv>
         <ItemsWrapper>
-          <CartItem />
-          <CartItem />
-          <CartItem />
-          <CartItem />
-          <CartItem />
+          { productsElems }
         </ItemsWrapper>
 
 
         <TotalPrice>
           <FlexRow>
             <Paragraph>ИТОГО</Paragraph>
-            <Paragraph>₽ 2909</Paragraph>
+            <Paragraph>₽ {totalPrice}</Paragraph>
           </FlexRow>
           <Button>Перейти к оформлению</Button>
         </TotalPrice>
