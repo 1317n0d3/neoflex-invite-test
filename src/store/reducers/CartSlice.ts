@@ -25,7 +25,21 @@ export const cartSlice = createSlice({
       } else {
         state.products.push({ ...item, cartCount: 1 })
       }
-    }
+    },
+    increaseItemCount(state, { payload: { id } }: PayloadAction<{ id: number }>) {
+      state.count++;
+      const item = state.products.find(product => product.id === id);
+      if(item) item.cartCount++;
+    },
+    decreaseItemCount(state, { payload: { id } }: PayloadAction<{ id: number }>) {
+      state.count--;
+      const item = state.products.find(product => product.id === id);
+      if(item) item.cartCount--;
+    },
+    removeItem(state, { payload: { id } }: PayloadAction<{ id: number }>) {
+      state.count = 0;
+      state.products = state.products.filter(product => product.id !== id);
+    },
   }
 })
 

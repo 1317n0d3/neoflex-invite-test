@@ -7,11 +7,13 @@ import { colors } from '../../constants/colors';
 import { useAppSelector } from '../../hooks/redux';
 
 interface IHeader {
-  favorites?: number,
-  cart?: number
 }
 
-const Header: FC<IHeader> = ({ favorites = 0, cart = 0, ...props }) => {
+interface IButtonCounter {
+  countDisabled: boolean
+}
+
+const Header: FC<IHeader> = ({ ...props }) => {
   const navigate = useNavigate();
   const count = useAppSelector(state => state.cartReducer.count);
 
@@ -26,12 +28,12 @@ const Header: FC<IHeader> = ({ favorites = 0, cart = 0, ...props }) => {
 
         <Buttons>
           <Button>
-            <ButtonCounter>2</ButtonCounter>
+            <ButtonCounter countDisabled={ false }>2</ButtonCounter>
             <img src={favoriteIcon} alt="Favorites" />
           </Button>
 
           <Button onClick={() => navigate('/cart')}>
-            <ButtonCounter>{ count }</ButtonCounter>
+            <ButtonCounter countDisabled={ count < 1 }>{ count }</ButtonCounter>
             <img src={cartIcon} alt="Cart" />
           </Button>
         </Buttons>
@@ -75,8 +77,8 @@ const Logo = styled.a`
     justify-content: space-between;
     align-items: center;
   `,
-  ButtonCounter = styled.div`
-    display: flex;
+  ButtonCounter = styled.div<IButtonCounter>`
+    display: ${ props => props.countDisabled ? 'none' : 'flex' };
     justify-content: center;
     align-items: center;
     width: 20px;

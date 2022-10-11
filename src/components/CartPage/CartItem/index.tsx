@@ -4,9 +4,13 @@ import { colors } from '../../../constants/colors';
 import trashIcon from '../../../assets/recycle-bin.svg';
 import Image from '../../Image';
 import { ICartItem } from '../../../models/ICartItem';
+import { useAppDispatch } from '../../../hooks/redux';
+import { cartSlice } from '../../../store/reducers/CartSlice';
 
 const CartItem: FC<ICartItem> = ({ cartCount, id, img, price, 
     rate, title, oldPrice, ...props }) => {
+  const dispatch = useAppDispatch();
+  const { increaseItemCount, decreaseItemCount, removeItem } = cartSlice.actions;
 
   return (
     <Wrapper>
@@ -14,9 +18,9 @@ const CartItem: FC<ICartItem> = ({ cartCount, id, img, price,
         <ItemImage src={require(`./../../../assets/${img}`)} alt={title} />
         <Row>
           <Counter>
-            <Button>-</Button>
+            <Button onClick={() => dispatch(decreaseItemCount({ id }))} disabled={cartCount <= 1}>-</Button>
             <Count>{ cartCount }</Count>
-            <Button>+</Button>
+            <Button onClick={() => dispatch(increaseItemCount({ id }))}>+</Button>
           </Counter>
         </Row>
       </Column>
@@ -25,7 +29,9 @@ const CartItem: FC<ICartItem> = ({ cartCount, id, img, price,
         <Price>{ price } ₽</Price>
       </Column>
       <ColumnEnd>
-        <Icon src={trashIcon} alt='remove' />
+        <Icon onClick={() => dispatch(removeItem({ id }))}>
+          <Image src={trashIcon} alt='remove' />
+        </Icon>
         <TotalPrice>{ price * cartCount } ₽</TotalPrice>
       </ColumnEnd>
     </Wrapper>
@@ -93,6 +99,11 @@ const Wrapper = styled.div`
     justify-content: center;
     align-items: center;
     text-align: center;
+    user-select: none;
+
+    &:disabled {
+      background-color: ${colors.gray};
+    }
   `,
   Count = styled.p`
     font-weight: 600;
@@ -106,10 +117,16 @@ const Wrapper = styled.div`
     font-weight: 500;
     font-size: 17px;
   `,
-  Icon = styled(Image)`
+  Icon = styled.button`
     height: 20px;
     width: 20px;
     cursor: pointer;
+    user-select: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: ${colors.white};
   `,
   Counter = styled.div`
     display: flex;
