@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/neoflex-invite-test/static/css/main.71023635.css",
+    "main.js": "/neoflex-invite-test/static/js/main.f447a0a5.js",
+    "static/js/787.5bb8f257.chunk.js": "/neoflex-invite-test/static/js/787.5bb8f257.chunk.js",
+    "static/media/EarPodsv2.png": "/neoflex-invite-test/static/media/EarPodsv2.550f390560a3d8cbd0ac.png",
+    "static/media/BOROFONE.png": "/neoflex-invite-test/static/media/BOROFONE.ab08cc2d6de451e264b5.png",
+    "static/media/GERLAX.png": "/neoflex-invite-test/static/media/GERLAX.746766f4e264e6d731c5.png",
+    "static/media/S852I.png": "/neoflex-invite-test/static/media/S852I.de6100077f82bfc39145.png",
+    "static/media/AirPods.png": "/neoflex-invite-test/static/media/AirPods.f73b2c97425ad92df816.png",
+    "static/media/EarPods.png": "/neoflex-invite-test/static/media/EarPods.334ec56e2b4984f9aa49.png",
+    "static/media/VK.svg": "/neoflex-invite-test/static/media/VK.200332db80feb34aac09a5f6d7d91e63.svg",
+    "static/media/Whatsapp.svg": "/neoflex-invite-test/static/media/Whatsapp.8dc15f232a985aef74ed03315e7a3148.svg",
+    "static/media/cart.svg": "/neoflex-invite-test/static/media/cart.0755738f949b36eb371956870cd1c963.svg",
+    "static/media/language.svg": "/neoflex-invite-test/static/media/language.eedc3647632f195d248ef501455be79a.svg",
+    "static/media/Telegram.svg": "/neoflex-invite-test/static/media/Telegram.17041232c86fdbc127e2f87541348769.svg",
+    "static/media/recycle-bin.svg": "/neoflex-invite-test/static/media/recycle-bin.c3b466f51641c238a464efcaaee70ebf.svg",
+    "index.html": "/neoflex-invite-test/index.html",
+    "static/media/favorite.svg": "/neoflex-invite-test/static/media/favorite.93e16e12c7f65e8a049a7da40e5cf4ca.svg",
+    "static/media/star.svg": "/neoflex-invite-test/static/media/star.a43f1fcddc9753cf027860154e0a0029.svg",
+    "main.71023635.css.map": "/neoflex-invite-test/static/css/main.71023635.css.map",
+    "main.f447a0a5.js.map": "/neoflex-invite-test/static/js/main.f447a0a5.js.map",
+    "787.5bb8f257.chunk.js.map": "/neoflex-invite-test/static/js/787.5bb8f257.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.71023635.css",
+    "static/js/main.f447a0a5.js"
+  ]
+}
