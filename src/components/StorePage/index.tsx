@@ -5,11 +5,9 @@ import Header from '../Header';
 import Store from './Store';
 
 interface IStorePage {
-  favorites?: number,
-  cart?: number
 }
 
-const StorePage: FC<IStorePage> = ({ favorites = 0, cart = 0, ...props }) => {
+const StorePage: FC<IStorePage> = ({ ...props }) => {
 
   return (
     <>

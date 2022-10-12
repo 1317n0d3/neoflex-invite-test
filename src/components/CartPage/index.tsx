@@ -5,11 +5,9 @@ import Header from '../Header';
 import Cart from './Cart';
 
 interface ICartPage {
-  favorites?: number,
-  cart?: number
 }
 
-const CartPage: FC<ICartPage> = ({ favorites = 0, cart = 0, ...props }) => {
+const CartPage: FC<ICartPage> = ({...props }) => {
 
   return (
     <div>

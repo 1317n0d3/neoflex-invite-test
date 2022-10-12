@@ -7,11 +7,9 @@ import { headphones, wirelessHeadphones } from '../../../mock';
 import StoreItem from '../StoreItem';
 
 interface IStore {
-  favorites?: number,
-  cart?: number
 }
 
-const Store: FC<IStore> = ({ favorites = 0, cart = 0, ...props }) => {
+const Store: FC<IStore> = ({ ...props }) => {
   const data1 = headphones
     .map(product => <StoreItem
       key={`product-`+ product.id}

@@ -1,7 +1,6 @@
 import React from 'react';
 import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom';
 import styled from 'styled-components';
-import './App.css';
 import CartPage from './components/CartPage';
 import StorePage from './components/StorePage';
 
