@@ -8,14 +8,14 @@ import StorePage from './components/StorePage';
 const router = createBrowserRouter([
   {
     path: "/*",
-    element: <Navigate to={'/'} />,
+    element: <Navigate to={'/neoflex-invite-test'} />,
   },
   {
-    path: "/",
+    path: "/neoflex-invite-test",
     element: <StorePage />,
   },
   {
-    path: "/cart",
+    path: "/neoflex-invite-test/cart",
     element: <CartPage />,
   },
 ]);

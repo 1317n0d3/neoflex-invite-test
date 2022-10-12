@@ -21,7 +21,7 @@ const Header: FC<IHeader> = ({ ...props }) => {
   return (
     <Wrapper>
       <NavContainer>
-        <Logo onClick={() => navigate('/')}>
+        <Logo onClick={() => navigate('/neoflex-invite-test')}>
           QPICK
         </Logo>
 
@@ -32,7 +32,7 @@ const Header: FC<IHeader> = ({ ...props }) => {
             <img src={favoriteIcon} alt="Favorites" />
           </Button>
 
-          <Button onClick={() => navigate('/cart')}>
+          <Button onClick={() => navigate('/neoflex-invite-test/cart')}>
             <ButtonCounter countDisabled={ count < 1 }>{ count }</ButtonCounter>
             <img src={cartIcon} alt="Cart" />
           </Button>
