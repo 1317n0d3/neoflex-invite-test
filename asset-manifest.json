@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/neoflex-invite-test/static/css/main.71023635.css",
-    "main.js": "/neoflex-invite-test/static/js/main.f447a0a5.js",
+    "main.js": "/neoflex-invite-test/static/js/main.6f5a1ffb.js",
     "static/js/787.5bb8f257.chunk.js": "/neoflex-invite-test/static/js/787.5bb8f257.chunk.js",
     "static/media/EarPodsv2.png": "/neoflex-invite-test/static/media/EarPodsv2.550f390560a3d8cbd0ac.png",
     "static/media/BOROFONE.png": "/neoflex-invite-test/static/media/BOROFONE.ab08cc2d6de451e264b5.png",
@@ -19,11 +19,11 @@
     "static/media/favorite.svg": "/neoflex-invite-test/static/media/favorite.93e16e12c7f65e8a049a7da40e5cf4ca.svg",
     "static/media/star.svg": "/neoflex-invite-test/static/media/star.a43f1fcddc9753cf027860154e0a0029.svg",
     "main.71023635.css.map": "/neoflex-invite-test/static/css/main.71023635.css.map",
-    "main.f447a0a5.js.map": "/neoflex-invite-test/static/js/main.f447a0a5.js.map",
+    "main.6f5a1ffb.js.map": "/neoflex-invite-test/static/js/main.6f5a1ffb.js.map",
     "787.5bb8f257.chunk.js.map": "/neoflex-invite-test/static/js/787.5bb8f257.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.71023635.css",
-    "static/js/main.f447a0a5.js"
+    "static/js/main.6f5a1ffb.js"
   ]
 }
